@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { CardModule } from '@jontze/ui/card';
+import { LandingComponent } from './landing.component';
+import { NgIconsModule } from '@ng-icons/core';
+import { heroChevronDoubleDownSolid } from '@ng-icons/heroicons/solid';
+import { FooterModule } from '@jontze/ui/footer';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, LandingComponent],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    CardModule,
+    FooterModule,
+    NgIconsModule.withIcons({
+      heroChevronDoubleDownSolid,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
