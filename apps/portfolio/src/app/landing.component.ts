@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'portfolio-landing',
   templateUrl: './landing.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
   ghLink = 'https://github.com/jontze';
