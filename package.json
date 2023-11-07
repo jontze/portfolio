@@ -17,6 +17,7 @@
     "@ng-icons/heroicons": "^25.6.0",
     "@ng-icons/tabler-icons": "^25.6.1",
     "@nx/angular": "17.0.3",
+    "@nx/nest": "^17.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
