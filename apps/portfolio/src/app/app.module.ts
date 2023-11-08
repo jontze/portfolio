@@ -8,6 +8,7 @@ import { NgIconsModule } from '@ng-icons/core';
 import { heroChevronDoubleDownSolid } from '@ng-icons/heroicons/solid';
 import { FooterModule } from '@jontze/ui/footer';
 import { ProjectsModule } from '@jontze/feature/projects';
+import { ParticleTextModule } from '@jontze/ui/particle-text';
 
 @NgModule({
   declarations: [AppComponent, LandingComponent],
@@ -16,6 +17,7 @@ import { ProjectsModule } from '@jontze/feature/projects';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     FooterModule,
     ProjectsModule,
+    ParticleTextModule,
     NgIconsModule.withIcons({
       heroChevronDoubleDownSolid,
     }),
