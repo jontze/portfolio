@@ -10,6 +10,8 @@ import {
   tablerGitFork,
   tablerCode,
 } from '@ng-icons/tabler-icons';
+import { ProjectsApiModule } from '@jontze/data-access/projects-api';
+import { ProjectRepoService } from './repos/project.repo.service';
 
 @NgModule({
   imports: [
@@ -21,8 +23,10 @@ import {
       tablerGitFork,
       tablerCode,
     }),
+    ProjectsApiModule,
   ],
   declarations: [ProjectCardComponent, ProjectListComponent],
   exports: [ProjectListComponent],
+  providers: [ProjectRepoService],
 })
 export class ProjectsModule {}
