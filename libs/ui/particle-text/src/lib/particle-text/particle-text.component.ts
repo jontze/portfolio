@@ -54,7 +54,7 @@ export class ParticleTextComponent implements AfterViewInit {
     }
 
     this.canvas.nativeElement.height = window.innerHeight;
-    this.canvas.nativeElement.width = window.innerWidth;
+    this.canvas.nativeElement.width = document.body.clientWidth;
 
     this.effect = new Effect(
       this.ctx,
