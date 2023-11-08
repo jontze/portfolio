@@ -40,6 +40,15 @@ export class ParticleTextComponent implements AfterViewInit {
     this.effect.wrapText(this.text ?? 'Hello Canvas!');
   }
 
+  // Copilot: Get the amount of pixels scrolled down
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    if (this.effect == null) {
+      throw new Error('Effect not initialized');
+    }
+    this.effect.mouse.scroll = window.scrollY;
+  }
+
   @Input() text?: string;
 
   private ctx?: CanvasRenderingContext2D | null;

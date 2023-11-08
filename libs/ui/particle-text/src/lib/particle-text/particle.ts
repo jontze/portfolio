@@ -43,7 +43,7 @@ export class Particle {
 
   update() {
     this.dx = this.effect.mouse.x - this.x;
-    this.dy = this.effect.mouse.y - this.y;
+    this.dy = this.effect.mouse.y + this.effect.mouse.scroll - this.y;
 
     // Calc distance between particle an mouse courser
     this.distance = this.dx * this.dx + this.dy * this.dy;

@@ -13,6 +13,7 @@ export class Effect {
     radius: 10000,
     x: 0,
     y: 0,
+    scroll: 0,
   };
 
   constructor(
