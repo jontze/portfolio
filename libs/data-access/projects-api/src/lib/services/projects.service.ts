@@ -8,6 +8,8 @@ export class ProjectsService {
   constructor(private readonly http: HttpClient) {}
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>('/api/projects');
+    return this.http.get<Project[]>(
+      'https://jontze-portfolio-api.azurewebsites.net/api/projects'
+    );
   }
 }
