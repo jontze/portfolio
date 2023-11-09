@@ -25,7 +25,7 @@ jobs:
       - name: Build Portfolio API
         run: yarn nx run portfolio-api:build       
       - name: Zip artifact for deployment
-        run: cd dist/apps/portfolio-api && zip -r ../../../release.zip ./*
+        run: zip release.zip ./* -r
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
