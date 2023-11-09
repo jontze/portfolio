@@ -1,0 +1,33 @@
+name: Deploy Portfolio SPA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  deploy:    
+    runs-on: ubuntu-latest
+    environment: 
+        name: 'Production'
+        url: portfolio.jontze.com
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build Portfolio SPA
+        run: yarn nx run portfolio:build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:          
+          folder: dist/apps/portfolio/
