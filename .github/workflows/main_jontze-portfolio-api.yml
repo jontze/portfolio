@@ -15,21 +15,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build Portfolio API
+        run: yarn nx run portfolio-api:build       
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-
+        run: cd dist/apps/portfolio-api && zip -r ../../../release.zip ./*
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
@@ -41,17 +37,14 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: node-app
-
       - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
+        run: unzip release.zip      
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
