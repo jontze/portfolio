@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
         name: 'Production'
-        url: portfolio.jontze.com
+        url: https://portfolio.jontze.com
     permissions:
       contents: write
     steps:
