@@ -22,7 +22,8 @@
       "@jontze/ui/animations": ["libs/ui/animations/src/index.ts"],
       "@jontze/ui/card": ["libs/ui/card/src/index.ts"],
       "@jontze/ui/footer": ["libs/ui/footer/src/index.ts"],
-      "@jontze/ui/particle-text": ["libs/ui/particle-text/src/index.ts"]
+      "@jontze/ui/particle-text": ["libs/ui/particle-text/src/index.ts"],
+      "@jontze/util/directive": ["libs/util/directive/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
