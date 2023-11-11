@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-3 px-3">
+<div class="flex flex-col gap-3 px-3 group">
   <portfolio-project-card
     *ngFor="let project of projects$ | async; trackBy: trackBy"
     [title]="project.title"
