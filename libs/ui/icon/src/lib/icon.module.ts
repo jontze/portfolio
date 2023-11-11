@@ -9,6 +9,9 @@ import {
   tablerCode,
   tablerBrandLinkedin,
   tablerBrandXing,
+  tablerBrandRust,
+  tablerBrandTypescript,
+  tablerBrandJavascript,
 } from '@ng-icons/tabler-icons';
 import { IconComponent } from './icon.component';
 
@@ -23,6 +26,9 @@ import { IconComponent } from './icon.component';
       tablerCode,
       tablerBrandLinkedin,
       tablerBrandXing,
+      tablerBrandRust,
+      tablerBrandTypescript,
+      tablerBrandJavascript,
     }),
   ],
   declarations: [IconComponent],

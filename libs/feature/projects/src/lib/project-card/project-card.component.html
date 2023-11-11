@@ -1,6 +1,6 @@
 <portfolio-card>
   <portfolio-card-title>
-    <portfolio-icon [icon]="codeIcon"></portfolio-icon>
+    <portfolio-icon [icon]="codeIcon" class="self-end"></portfolio-icon>
     <span class="pb-[0.15rem]">{{ title }}</span>
     <portfolio-icon-link
       portfolioMouseOver
@@ -20,13 +20,24 @@
       class="flex flex-row gap-4 items-center dark:border-t-gray-600 border-t border-dotted pt-1"
     >
       <div class="flex flex-row gap-2 items-center">
-        <portfolio-icon [icon]="starIcon"></portfolio-icon>
+        <portfolio-icon
+          [icon]="starIcon"
+          class="text-sm self-end"
+        ></portfolio-icon>
         <span class="pointer-events-none">{{ starCount }}</span>
       </div>
       <div class="flex flex-row gap-2 items-center">
-        <portfolio-icon [icon]="forkIcon"></portfolio-icon>
+        <portfolio-icon
+          [icon]="forkIcon"
+          class="text-sm self-end"
+        ></portfolio-icon>
         <span class="pointer-events-none">{{ forkCount }}</span>
       </div>
+      <portfolio-icon
+        class="text-sm self-end"
+        *ngIf="langIcon"
+        [icon]="langIcon"
+      ></portfolio-icon>
     </div>
   </div>
 </portfolio-card>

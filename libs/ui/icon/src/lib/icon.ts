@@ -6,4 +6,7 @@ export enum Icon {
   Linkedin = 'tablerBrandLinkedin',
   Xing = 'tablerBrandXing',
   ChevronDoubleDown = 'heroChevronDoubleDownSolid',
+  Rust = 'tablerBrandRust',
+  Typescript = 'tablerBrandTypescript',
+  Javascript = 'tablerBrandJavascript',
 }
