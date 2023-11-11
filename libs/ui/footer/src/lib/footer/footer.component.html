@@ -1,29 +1,10 @@
 <div class="h-12 flex flex-row text-4xl justify-evenly items-center p-3 gap-4">
-  <a
-    [@smallSpin]="ghState()"
-    [href]="ghLink"
-    target="_blank"
-    (mouseenter)="mouseEnterGh()"
-    (mouseleave)="mouseLeaveGh()"
-    ><ng-icon name="tablerBrandGithub"></ng-icon
-  ></a>
-  <a
-    [@smallSpin]="linkedinState()"
-    [href]="linkedinLink"
-    target="_blank"
-    (mouseenter)="mouseEnterLinkedin()"
-    (mouseleave)="mouseLeaveLinkedin()"
-  >
-    <ng-icon name="tablerBrandLinkedin"></ng-icon>
-  </a>
-
-  <a
-    [@smallSpin]="xingState()"
-    [href]="xingLink"
-    target="_blank"
-    (mouseenter)="mouseEnterXing()"
-    (mouseleave)="mouseLeaveXing()"
-  >
-    <ng-icon name="tablerBrandXing"></ng-icon>
-  </a>
+  <portfolio-icon-link
+    *ngFor="let item of footerItems; trackBy: trackFooterItem"
+    portfolioMouseOver
+    [@smallSpin]="item.state()"
+    [icon]="item.icon"
+    [iconLink]="item.link"
+    (isOver)="onMouseOver($event, item.icon)"
+  ></portfolio-icon-link>
 </div>

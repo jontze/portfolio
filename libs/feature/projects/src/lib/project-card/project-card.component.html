@@ -1,17 +1,16 @@
 <portfolio-card>
   <portfolio-card-title>
-    <ng-icon name="tablerCode"></ng-icon>
+    <portfolio-icon [icon]="codeIcon"></portfolio-icon>
     <span class="pb-[0.15rem]">{{ title }}</span>
-    <a
+    <portfolio-icon-link
+      portfolioMouseOver
       [@smallSpin]="ghState()"
-      [href]="link"
-      target="_blank"
+      [icon]="ghIcon"
+      [iconLink]="link"
+      (isOver)="mouseOverIcon($event)"
       class="justify-self-end ml-auto"
-      (mouseenter)="mouseEnterGh()"
-      (mouseleave)="mouseLeaveGh()"
     >
-      <ng-icon name="tablerBrandGithub"></ng-icon>
-    </a>
+    </portfolio-icon-link>
   </portfolio-card-title>
   <div class="flex flex-col gap-2">
     <p>
@@ -21,11 +20,11 @@
       class="flex flex-row gap-4 items-center dark:border-t-gray-600 border-t border-dotted pt-1"
     >
       <div class="flex flex-row gap-2 items-center">
-        <ng-icon name="tablerStar"></ng-icon>
+        <portfolio-icon [icon]="starIcon"></portfolio-icon>
         <span class="pointer-events-none">{{ starCount }}</span>
       </div>
       <div class="flex flex-row gap-2 items-center">
-        <ng-icon name="tablerGitFork"></ng-icon>
+        <portfolio-icon [icon]="forkIcon"></portfolio-icon>
         <span class="pointer-events-none">{{ forkCount }}</span>
       </div>
     </div>

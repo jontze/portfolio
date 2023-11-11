@@ -3,26 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { CardModule } from '@jontze/ui/card';
-import { NgIconsModule } from '@ng-icons/core';
-import {
-  tablerBrandGithub,
-  tablerStar,
-  tablerGitFork,
-  tablerCode,
-} from '@ng-icons/tabler-icons';
 import { ProjectsApiModule } from '@jontze/data-access/projects-api';
 import { ProjectRepoService } from './repos/project.repo.service';
+import { IconLinkModule } from '@jontze/ui/icon-link';
+import { DirectiveModule } from '@jontze/util/directive';
+import { IconModule } from '@jontze/ui/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     CardModule,
-    NgIconsModule.withIcons({
-      tablerBrandGithub,
-      tablerStar,
-      tablerGitFork,
-      tablerCode,
-    }),
+    IconModule,
+    IconLinkModule,
+    DirectiveModule,
     ProjectsApiModule,
   ],
   declarations: [ProjectCardComponent, ProjectListComponent],
