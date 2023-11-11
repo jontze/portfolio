@@ -1,24 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
-import { NgIconsModule } from '@ng-icons/core';
-import { heroChevronDoubleDownSolid } from '@ng-icons/heroicons/solid';
-import {
-  tablerBrandGithub,
-  tablerBrandLinkedin,
-  tablerBrandXing,
-} from '@ng-icons/tabler-icons';
+import { IconLinkModule } from '@jontze/ui/icon-link';
+import { DirectiveModule } from '@jontze/util/directive';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgIconsModule.withIcons({
-      heroChevronDoubleDownSolid,
-      tablerBrandLinkedin,
-      tablerBrandXing,
-      tablerBrandGithub,
-    }),
-  ],
+  imports: [CommonModule, IconLinkModule, DirectiveModule],
   declarations: [FooterComponent],
   exports: [FooterComponent],
 })

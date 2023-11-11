@@ -1,11 +1,17 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
   WritableSignal,
   signal,
 } from '@angular/core';
 import { SmallSpinState, smallSpin } from '@jontze/ui/animations';
+import { Icon } from '@jontze/ui/icon';
+
+export interface FooterItem {
+  link: string;
+  icon: Icon;
+  state: WritableSignal<SmallSpinState>;
+}
 
 @Component({
   selector: 'portfolio-footer',
@@ -14,35 +20,32 @@ import { SmallSpinState, smallSpin } from '@jontze/ui/animations';
   animations: [smallSpin],
 })
 export class FooterComponent {
-  ghState: WritableSignal<SmallSpinState> = signal(SmallSpinState.NONE);
-  xingState: WritableSignal<SmallSpinState> = signal(SmallSpinState.NONE);
-  linkedinState: WritableSignal<SmallSpinState> = signal(SmallSpinState.NONE);
+  footerItems: FooterItem[] = [
+    {
+      link: 'https://github.com/jontze',
+      icon: Icon.Github,
+      state: signal(SmallSpinState.NONE),
+    },
+    {
+      link: 'https://www.xing.com/profile/Jonathan_Schultze/',
+      icon: Icon.Xing,
+      state: signal(SmallSpinState.NONE),
+    },
+    {
+      link: 'https://www.linkedin.com/in/j0ntze/',
+      icon: Icon.Linkedin,
+      state: signal(SmallSpinState.NONE),
+    },
+  ];
 
-  @Input() public ghLink?: string;
-  @Input() public xingLink?: string;
-  @Input() public linkedinLink?: string;
-
-  mouseEnterGh() {
-    this.ghState.set(SmallSpinState.SPIN);
+  onMouseOver(isOver: boolean, icon: Icon) {
+    const item = this.footerItems.find((item) => item.icon === icon);
+    if (item) {
+      item.state.set(isOver ? SmallSpinState.SPIN : SmallSpinState.NONE);
+    }
   }
 
-  mouseLeaveGh() {
-    this.ghState.set(SmallSpinState.NONE);
-  }
-
-  mouseEnterXing() {
-    this.xingState.set(SmallSpinState.SPIN);
-  }
-
-  mouseLeaveXing() {
-    this.xingState.set(SmallSpinState.NONE);
-  }
-
-  mouseEnterLinkedin() {
-    this.linkedinState.set(SmallSpinState.SPIN);
-  }
-
-  mouseLeaveLinkedin() {
-    this.linkedinState.set(SmallSpinState.NONE);
+  trackFooterItem(_index: number, item: FooterItem) {
+    return item.icon;
   }
 }

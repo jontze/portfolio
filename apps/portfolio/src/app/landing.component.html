@@ -6,22 +6,14 @@
       <portfolio-particle-text text="Jontze"></portfolio-particle-text>
     </div>
     <div class="self-end flex flex-col justify-center gap-5">
-      <portfolio-footer
-        [ghLink]="ghLink"
-        [linkedinLink]="linkedinLink"
-        [xingLink]="xingLink"
-      ></portfolio-footer>
-      <ng-icon
-        name="heroChevronDoubleDownSolid"
+      <portfolio-footer></portfolio-footer>
+      <portfolio-icon
+        [icon]="chevronDownIcon"
         class="self-center m-2 text-3xl animate-bounce cursor-pointer"
         (click)="scrollScreenDown()"
-      ></ng-icon>
+      ></portfolio-icon>
     </div>
   </div>
   <portfolio-project-list></portfolio-project-list>
-  <portfolio-footer
-    [ghLink]="ghLink"
-    [linkedinLink]="linkedinLink"
-    [xingLink]="xingLink"
-  ></portfolio-footer>
+  <portfolio-footer></portfolio-footer>
 </div>

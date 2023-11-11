@@ -6,6 +6,7 @@ import {
   signal,
 } from '@angular/core';
 import { SmallSpinState, smallSpin } from '@jontze/ui/animations';
+import { Icon } from '@jontze/ui/icon';
 
 @Component({
   selector: 'portfolio-project-card',
@@ -20,13 +21,14 @@ export class ProjectCardComponent {
   @Input() starCount?: number;
   @Input() forkCount?: number;
 
+  codeIcon = Icon.Code;
+  starIcon = Icon.Star;
+  forkIcon = Icon.Fork;
+  ghIcon = Icon.Github;
+
   ghState: WritableSignal<SmallSpinState> = signal(SmallSpinState.NONE);
 
-  mouseEnterGh() {
-    this.ghState.set(SmallSpinState.SPIN);
-  }
-
-  mouseLeaveGh() {
-    this.ghState.set(SmallSpinState.NONE);
+  mouseOverIcon(isOver: boolean) {
+    this.ghState.set(isOver ? SmallSpinState.SPIN : SmallSpinState.NONE);
   }
 }

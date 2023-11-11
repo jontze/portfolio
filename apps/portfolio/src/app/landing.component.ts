@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Icon } from '@jontze/ui/icon';
 
 @Component({
   selector: 'portfolio-landing',
@@ -6,9 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
-  ghLink = 'https://github.com/jontze';
-  linkedinLink = 'https://www.linkedin.com/in/j0ntze/';
-  xingLink = 'https://www.xing.com/profile/Jonathan_Schultze/';
+  chevronDownIcon = Icon.ChevronDoubleDown;
 
   scrollScreenDown() {
     const height =
