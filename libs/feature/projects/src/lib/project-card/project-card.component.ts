@@ -20,6 +20,20 @@ export class ProjectCardComponent {
   @Input() link?: string;
   @Input() starCount?: number;
   @Input() forkCount?: number;
+  @Input()
+  get langIcon(): Icon | undefined {
+    return this._langIcon;
+  }
+
+  set langIcon(value: Icon | string | undefined) {
+    if (Object.values(Icon).includes(value as Icon)) {
+      this._langIcon = value as Icon;
+    } else {
+      this._langIcon = undefined;
+    }
+  }
+
+  private _langIcon?: Icon;
 
   codeIcon = Icon.Code;
   starIcon = Icon.Star;

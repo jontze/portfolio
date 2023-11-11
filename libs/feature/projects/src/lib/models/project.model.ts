@@ -4,4 +4,5 @@ export interface Project {
   link: string;
   stars: number;
   forks: number;
+  langIcon?: string;
 }
