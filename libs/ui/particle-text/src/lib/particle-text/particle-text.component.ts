@@ -31,13 +31,18 @@ export class ParticleTextComponent implements AfterViewInit {
     if (this.effect == null) {
       throw new Error('Effect not initialized');
     }
-    this.canvas.nativeElement.height = window.innerHeight;
-    this.canvas.nativeElement.width = document.body.clientWidth;
-    this.effect.resize(
-      this.canvas.nativeElement.width,
-      this.canvas.nativeElement.height
-    );
-    this.effect.wrapText(this.text ?? 'Hello Canvas!');
+    // Only resize if the width has changed. This is important as
+    // otherwise we reisze the canvas on mobile devices during
+    // vertical scrolling.
+    if (this.canvas.nativeElement.width !== document.body.clientWidth) {
+      this.canvas.nativeElement.height = window.innerHeight;
+      this.canvas.nativeElement.width = document.body.clientWidth;
+      this.effect.resize(
+        this.canvas.nativeElement.width,
+        this.canvas.nativeElement.height
+      );
+      this.effect.wrapText(this.text ?? 'Hello Canvas!');
+    }
   }
 
   // Copilot: Get the amount of pixels scrolled down
