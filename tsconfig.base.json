@@ -18,6 +18,7 @@
       "@jontze/data-access/projects-api": [
         "libs/data-access/projects-api/src/index.ts"
       ],
+      "@jontze/feature/landing": ["libs/feature/landing/src/index.ts"],
       "@jontze/feature/projects": ["libs/feature/projects/src/index.ts"],
       "@jontze/ui/animations": ["libs/ui/animations/src/index.ts"],
       "@jontze/ui/card": ["libs/ui/card/src/index.ts"],
