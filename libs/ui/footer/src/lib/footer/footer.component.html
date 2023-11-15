@@ -1,10 +1,11 @@
 <div class="flex flex-row text-4xl justify-evenly items-center p-3 gap-4">
+  @for (item of footerItems; track item.link) {
   <portfolio-icon-link
-    *ngFor="let item of footerItems; trackBy: trackFooterItem"
     portfolioMouseOver
     [@smallSpin]="item.state()"
     [icon]="item.icon"
     [iconLink]="item.link"
     (isOver)="onMouseOver($event, item.icon)"
   ></portfolio-icon-link>
+  }
 </div>

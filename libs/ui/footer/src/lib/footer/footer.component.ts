@@ -44,8 +44,4 @@ export class FooterComponent {
       item.state.set(isOver ? SmallSpinState.SPIN : SmallSpinState.NONE);
     }
   }
-
-  trackFooterItem(_index: number, item: FooterItem) {
-    return item.icon;
-  }
 }

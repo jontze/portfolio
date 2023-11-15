@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ProjectRepoService } from '../repos/project.repo.service';
 import { Project } from '../models/project.model';
 
@@ -9,11 +9,9 @@ import { Project } from '../models/project.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectListComponent {
-  projects$: Observable<Project[]> = this.projectRepo.all();
+  projects: Signal<Project[]> = toSignal(this.projectRepo.all(), {
+    initialValue: [],
+  });
 
   constructor(private readonly projectRepo: ProjectRepoService) {}
-
-  trackBy(_index: number, project: Project): string {
-    return project.link;
-  }
 }

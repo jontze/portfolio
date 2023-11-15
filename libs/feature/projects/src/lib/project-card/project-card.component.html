@@ -38,12 +38,13 @@
           forkCount
         }}</span>
       </div>
+      @if (langIcon) {
       <portfolio-icon
         data-test="project-lang"
         class="text-sm self-end"
-        *ngIf="langIcon"
         [icon]="langIcon"
       ></portfolio-icon>
+      }
     </div>
   </div>
 </portfolio-card>

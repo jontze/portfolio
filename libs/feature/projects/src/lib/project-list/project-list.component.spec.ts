@@ -47,18 +47,11 @@ describe('ProjectListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load proejcts from api', (done) => {
-    component.projects$.subscribe((projects) => {
-      const projectsRepo = TestBed.inject(ProjectRepoService);
-      expect(projectsRepo.all).toHaveBeenCalled();
-      expect(projects).toEqual(mockProjects);
-      done();
-    });
-  });
-
-  it('should track projects by link', () => {
-    const trackBy = component.trackBy(0, mockProjects[0]);
-    expect(trackBy).toEqual(mockProjects[0].link);
+  it('should load proejcts from api', () => {
+    const projectsRepo = TestBed.inject(ProjectRepoService);
+    const projects = component.projects();
+    expect(projectsRepo.all).toHaveBeenCalled();
+    expect(projects).toEqual(mockProjects);
   });
 
   it('should have project card for each project', () => {
