@@ -114,17 +114,6 @@
     "@angular-devkit/architect" "0.1700.0"
     rxjs "7.8.1"
 
-"@angular-devkit/core@16.0.1":
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-16.0.1.tgz#1af4177d503d8d1babdf29c95d8901660a557243"
-  integrity sha512-2uz98IqkKJlgnHbWQ7VeL4pb+snGAZXIama2KXi+k9GsRntdcw+udX8rL3G9SdUGUF+m6+147Y1oRBMHsO/v4w==
-  dependencies:
-    ajv "8.12.0"
-    ajv-formats "2.1.1"
-    jsonc-parser "3.2.0"
-    rxjs "7.8.1"
-    source-map "0.7.4"
-
 "@angular-devkit/core@17.0.0":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-17.0.0.tgz#99cd048cca37cf4d0cb60a3b6871e19449a8006a"
@@ -136,17 +125,6 @@
     picomatch "3.0.1"
     rxjs "7.8.1"
     source-map "0.7.4"
-
-"@angular-devkit/schematics@16.0.1":
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-16.0.1.tgz#d49387e9e41c9cce98b155da51b0e193333dd178"
-  integrity sha512-A9D0LTYmiqiBa90GKcSuWb7hUouGIbm/AHbJbjL85WLLRbQA2PwKl7P5Mpd6nS/ZC0kfG4VQY3VOaDvb3qpI9g==
-  dependencies:
-    "@angular-devkit/core" "16.0.1"
-    jsonc-parser "3.2.0"
-    magic-string "0.30.0"
-    ora "5.4.1"
-    rxjs "7.8.1"
 
 "@angular-devkit/schematics@17.0.0":
   version "17.0.0"
@@ -1877,7 +1855,7 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@jridgewell/sourcemap-codec@^1.4.10", "@jridgewell/sourcemap-codec@^1.4.13", "@jridgewell/sourcemap-codec@^1.4.14", "@jridgewell/sourcemap-codec@^1.4.15":
+"@jridgewell/sourcemap-codec@^1.4.10", "@jridgewell/sourcemap-codec@^1.4.14", "@jridgewell/sourcemap-codec@^1.4.15":
   version "1.4.15"
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz#d7c6e6755c78567a951e04ab52ef0fd26de59f32"
   integrity sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==
@@ -1909,16 +1887,6 @@
   integrity sha512-ccfcIDlogiXNq5KcbAwbaO7lMh3Tm1i3khMPYpxlK8hH/W53zN81KM9coerRLOnTGu3nfXIniAmQbRI9OxbC0w==
   dependencies:
     call-bind "^1.0.2"
-
-"@nestjs/schematics@^9.1.0":
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-9.2.0.tgz#f840054b5ae4b0b4e70aa9f72c09c3cf388f2512"
-  integrity sha512-wHpNJDPzM6XtZUOB3gW0J6mkFCSJilzCM3XrHI1o0C8vZmFE1snbmkIXNyoi1eV0Nxh1BMymcgz5vIMJgQtTqw==
-  dependencies:
-    "@angular-devkit/core" "16.0.1"
-    "@angular-devkit/schematics" "16.0.1"
-    jsonc-parser "3.2.0"
-    pluralize "8.0.0"
 
 "@ng-icons/core@^25.6.0":
   version "25.6.0"
@@ -2072,20 +2040,6 @@
   integrity sha512-70Fx//GJdRt2Uo6ft07Up+eeSK2+jqUnkBhvGLauro91g9SVSgbHlhj+D8l86wccyKz/OULod29WEBkA6Z/t3Q==
   dependencies:
     "@nx/js" "17.1.2"
-
-"@nrwl/nest@17.1.2":
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/nest/-/nest-17.1.2.tgz#ef6ce1d7001010bfd61b1f0d5af0f069f408b974"
-  integrity sha512-s9/mvLyw0DSzefr6F+/w2tCGhVPR14IDiUac/q9r/MraUo2fkq0SmCbz5wl5L9fGHkpGGcCdruprijh6i7844w==
-  dependencies:
-    "@nx/nest" "17.1.2"
-
-"@nrwl/node@17.1.2":
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/@nrwl/node/-/node-17.1.2.tgz#6caebc336e34c7c2ec016a6c99e5472db59d3905"
-  integrity sha512-tfyE+Rmr/UiQXKciJahHrLhuoZmmKjhB5gaLGCnYpTDHRur+pogpDuHP+242DF5k108SHCcTR5OuUi08SBm3Qg==
-  dependencies:
-    "@nx/node" "17.1.2"
 
 "@nrwl/tao@17.1.2":
   version "17.1.2"
@@ -2257,32 +2211,6 @@
   integrity sha512-KS7jq61Fg2tiB+PDui3+zH9RANZV/rYyg1yzKe/Say7DabcZDziHmxw5t/JZE7JlTA2Kmy7HBMRgvJsqxOlukQ==
   dependencies:
     "@nx/eslint" "17.1.2"
-
-"@nx/nest@17.1.2":
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/@nx/nest/-/nest-17.1.2.tgz#bb031a8ef64298a4a48f1f995f8e22ec1487f5ec"
-  integrity sha512-IsIk+O7C0cxHDB9mCXtY3X5PQBirq/KI/bj770OSZAPzxuZ+0MwD82nRGRFRcPzYKSXpbiQSxesoJMfIgThXiQ==
-  dependencies:
-    "@nestjs/schematics" "^9.1.0"
-    "@nrwl/nest" "17.1.2"
-    "@nx/devkit" "17.1.2"
-    "@nx/eslint" "17.1.2"
-    "@nx/js" "17.1.2"
-    "@nx/node" "17.1.2"
-    "@phenomnomnominal/tsquery" "~5.0.1"
-    tslib "^2.3.0"
-
-"@nx/node@17.1.2":
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/@nx/node/-/node-17.1.2.tgz#2937513814128f4b95d2f7b983aa5950f95db588"
-  integrity sha512-o3M1RD2UliorCf9LyxSK3+QQ9qF3JUJa7gigmoc/25DiByyuZ962OUpPeyUsruNmgowJnB/ZSKh9QnhI4NiWZQ==
-  dependencies:
-    "@nrwl/node" "17.1.2"
-    "@nx/devkit" "17.1.2"
-    "@nx/eslint" "17.1.2"
-    "@nx/jest" "17.1.2"
-    "@nx/js" "17.1.2"
-    tslib "^2.3.0"
 
 "@nx/nx-darwin-arm64@17.1.2":
   version "17.1.2"
@@ -7361,13 +7289,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-magic-string@0.30.0:
-  version "0.30.0"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.0.tgz#fd58a4748c5c4547338a424e90fa5dd17f4de529"
-  integrity sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==
-  dependencies:
-    "@jridgewell/sourcemap-codec" "^1.4.13"
-
 magic-string@0.30.5, magic-string@~0.30.2:
   version "0.30.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.5.tgz#1994d980bd1c8835dc6e78db7cbd4ae4f24746f9"
@@ -8314,11 +8235,6 @@ pkg-dir@^7.0.0:
   integrity sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==
   dependencies:
     find-up "^6.3.0"
-
-pluralize@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
-  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
 portfinder@^1.0.28:
   version "1.0.32"

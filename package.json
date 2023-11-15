@@ -17,7 +17,6 @@
     "@ng-icons/heroicons": "^25.6.0",
     "@ng-icons/tabler-icons": "^25.6.1",
     "@nx/angular": "17.1.2",
-    "@nx/nest": "17.1.2",
     "axios": "^1.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -65,4 +64,3 @@
     "typescript": "5.2.2"
   }
 }
-
