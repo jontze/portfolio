@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from '@jontze/feature/landing';
 
 export const appRoutes: Route[] = [
   {

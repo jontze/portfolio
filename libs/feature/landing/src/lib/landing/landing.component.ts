@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Icon } from '@jontze/ui/icon';
 
 @Component({
   selector: 'portfolio-landing',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingComponent {}
+export class LandingComponent {
+  chevronDownIcon = Icon.ChevronDoubleDown;
+
+  scrollScreenDown() {
+    const height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    window.scrollBy({
+      top: height,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+}
