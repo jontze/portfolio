@@ -1,7 +1,7 @@
 <portfolio-card>
   <portfolio-card-title>
     <portfolio-icon [icon]="codeIcon" class="self-end"></portfolio-icon>
-    <span class="pb-[0.15rem]">{{ title }}</span>
+    <span class="pb-[0.15rem]" data-test="project-title">{{ title }}</span>
     <portfolio-icon-link
       portfolioMouseOver
       [@smallSpin]="ghState()"
@@ -12,11 +12,12 @@
     >
     </portfolio-icon-link>
   </portfolio-card-title>
-  <div class="flex flex-col gap-2">
-    <p>
+  <div class="flex flex-col gap-2" data-test="project-card-content">
+    <p data-test="project-description">
       {{ description }}
     </p>
     <div
+      data-test="project-card-footer"
       class="flex flex-row gap-4 items-center dark:border-t-gray-600 border-t border-dotted pt-1"
     >
       <div class="flex flex-row gap-2 items-center">
@@ -24,16 +25,21 @@
           [icon]="starIcon"
           class="text-sm self-end"
         ></portfolio-icon>
-        <span class="pointer-events-none">{{ starCount }}</span>
+        <span data-test="project-stars" class="pointer-events-none">{{
+          starCount
+        }}</span>
       </div>
       <div class="flex flex-row gap-2 items-center">
         <portfolio-icon
           [icon]="forkIcon"
           class="text-sm self-end"
         ></portfolio-icon>
-        <span class="pointer-events-none">{{ forkCount }}</span>
+        <span data-test="project-forks" class="pointer-events-none">{{
+          forkCount
+        }}</span>
       </div>
       <portfolio-icon
+        data-test="project-lang"
         class="text-sm self-end"
         *ngIf="langIcon"
         [icon]="langIcon"

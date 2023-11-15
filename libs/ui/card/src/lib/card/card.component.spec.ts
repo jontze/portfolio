@@ -18,4 +18,15 @@ describe('CardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should update mouse position on mouse over', () => {
+    const event = { xPixel: 10, yPixel: 20 };
+    component.onMouseMoveOnCard(event);
+    expect(component.mouseX()).toEqual(event.xPixel);
+    expect(component.mouseY()).toEqual(event.yPixel);
+    expect(component.mouseStyle()).toEqual({
+      '--mouse-x': `${event.xPixel}px`,
+      '--mouse-y': `${event.yPixel}px`,
+    });
+  });
 });

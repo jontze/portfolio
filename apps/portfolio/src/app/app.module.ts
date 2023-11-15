@@ -9,7 +9,7 @@ import { ParticleTextModule } from '@jontze/ui/particle-text';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { LandingComponent } from './landing.component';
+import { LandingComponent } from './landing/landing.component';
 import { IconModule } from '@jontze/ui/icon';
 
 @NgModule({
