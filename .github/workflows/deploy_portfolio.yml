@@ -6,13 +6,19 @@ on:
       - main
   workflow_dispatch:
 
-
 jobs:
-  deploy:    
+  test:
+    uses: ./.github/workflows/test.yml
+    secrets:
+      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+
+  deploy:
+    needs:
+      - test
     runs-on: ubuntu-latest
-    environment: 
-        name: 'Production'
-        url: https://portfolio.jontze.com
+    environment:
+      name: 'Production'
+      url: https://portfolio.jontze.com
     permissions:
       contents: write
     steps:
@@ -29,5 +35,5 @@ jobs:
         run: yarn nx run portfolio:build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        with:          
+        with:
           folder: dist/apps/portfolio/
