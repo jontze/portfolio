@@ -2,6 +2,10 @@ name: Test
 
 on:
   workflow_call:
+    secrets:
+      NX_CLOUD_ACCESS_TOKEN:
+        required: true
+        description: 'The access token for nx cloud'
 
 jobs:
   unit:
