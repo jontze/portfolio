@@ -6,11 +6,11 @@
       <portfolio-particle-text text="Jontze"></portfolio-particle-text>
     </div>
     <div class="self-end flex flex-col justify-center gap-5">
-      <portfolio-footer></portfolio-footer>
+      <portfolio-footer @fadeIn></portfolio-footer>
       <portfolio-icon
         [icon]="chevronDownIcon"
-        class="self-center m-2 text-3xl animate-bounce cursor-pointer"
         (click)="scrollScreenDown()"
+        class="self-center m-2 text-3xl animate-bounce cursor-pointer"
         data-test="scroll-down"
       ></portfolio-icon>
     </div>
