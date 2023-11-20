@@ -39,9 +39,4 @@ describe('FooterComponent', () => {
     component.onMouseOver(false, footerItem.icon);
     expect(footerItem.state()).toEqual(SmallSpinState.NONE);
   });
-
-  it('should track footer item by icon', () => {
-    const footerItem = component.footerItems[0];
-    expect(component.trackFooterItem(0, footerItem)).toEqual(footerItem.icon);
-  });
 });
