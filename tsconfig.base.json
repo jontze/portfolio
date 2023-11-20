@@ -26,7 +26,8 @@
       "@jontze/ui/icon": ["libs/ui/icon/src/index.ts"],
       "@jontze/ui/icon-link": ["libs/ui/icon-link/src/index.ts"],
       "@jontze/ui/particle-text": ["libs/ui/particle-text/src/index.ts"],
-      "@jontze/util/directive": ["libs/util/directive/src/index.ts"]
+      "@jontze/util/directive": ["libs/util/directive/src/index.ts"],
+      "@jontze/util/testing": ["libs/util/testing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
