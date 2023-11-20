@@ -8,6 +8,8 @@ import { ProjectRepoService } from '../repos/project.repo.service';
 import { CardModule } from '@jontze/ui/card';
 import { IconLinkModule } from '@jontze/ui/icon-link';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ɵDeferBlockState } from '@angular/core';
+import { setupIntersectionObserverMock } from '@jontze/util/testing';
 
 describe('ProjectListComponent', () => {
   let component: ProjectListComponent;
@@ -25,6 +27,7 @@ describe('ProjectListComponent', () => {
   ];
 
   beforeEach(async () => {
+    setupIntersectionObserverMock();
     await TestBed.configureTestingModule({
       declarations: [ProjectListComponent, ProjectCardComponent],
       imports: [CardModule, IconModule, IconLinkModule, NoopAnimationsModule],
@@ -54,11 +57,23 @@ describe('ProjectListComponent', () => {
     expect(projects).toEqual(mockProjects);
   });
 
-  it('should have project card for each project', () => {
+  it('should have project card for each project', async () => {
+    // Set defered project cards to complete
+    const deferedProjects = await fixture.getDeferBlocks();
+    for (const project of deferedProjects) {
+      await project.render(ɵDeferBlockState.Complete);
+    }
     const projectCards = fixture.nativeElement.querySelectorAll(
       'portfolio-project-card'
     );
     expect(projectCards.length).toEqual(mockProjects.length);
+  });
+
+  it('should not have project cards if deferred condition not completed', () => {
+    const projectCards = fixture.nativeElement.querySelectorAll(
+      'portfolio-project-card'
+    );
+    expect(projectCards.length).toEqual(0);
   });
 
   it('should have title', () => {
