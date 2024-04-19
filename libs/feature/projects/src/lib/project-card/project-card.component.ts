@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,11 +7,23 @@ import {
   signal,
 } from '@angular/core';
 import { SmallSpinState, smallSpin } from '@jontze/ui/animations';
-import { Icon } from '@jontze/ui/icon';
+import { CardComponent, CardTitleComponent } from '@jontze/ui/card';
+import { Icon, IconComponent } from '@jontze/ui/icon';
+import { IconLinkComponent } from '@jontze/ui/icon-link';
+import { MouseOverDirective } from '@jontze/util/directive';
 
 @Component({
   selector: 'portfolio-project-card',
   templateUrl: './project-card.component.html',
+  standalone: true,
+  imports: [
+    IconComponent,
+    NgIf,
+    IconLinkComponent,
+    MouseOverDirective,
+    CardComponent,
+    CardTitleComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [smallSpin],
 })

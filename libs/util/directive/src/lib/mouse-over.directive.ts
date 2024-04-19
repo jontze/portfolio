@@ -1,6 +1,7 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[portfolioMouseOver]',
 })
 export class MouseOverDirective {

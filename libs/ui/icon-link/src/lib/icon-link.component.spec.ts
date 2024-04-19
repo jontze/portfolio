@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IconLinkComponent } from './icon-link.component';
-import { IconModule } from '@jontze/ui/icon';
 
 describe('IconLinkComponent', () => {
   let component: IconLinkComponent;
@@ -8,8 +7,7 @@ describe('IconLinkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IconLinkComponent],
-      imports: [IconModule],
+      imports: [IconLinkComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(IconLinkComponent);

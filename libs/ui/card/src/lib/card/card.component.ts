@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -5,10 +6,13 @@ import {
   computed,
   signal,
 } from '@angular/core';
+import { MousePositionDirective } from '@jontze/util/directive';
 
 @Component({
   selector: 'portfolio-card',
   templateUrl: './card.component.html',
+  standalone: true,
+  imports: [MousePositionDirective, NgStyle],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {

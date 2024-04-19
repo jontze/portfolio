@@ -1,1 +1,1 @@
-export * from './lib/particle-text.module';
+export * from './lib/particle-text/particle-text.component';

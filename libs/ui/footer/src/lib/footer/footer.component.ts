@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,6 +7,8 @@ import {
 } from '@angular/core';
 import { SmallSpinState, smallSpin } from '@jontze/ui/animations';
 import { Icon } from '@jontze/ui/icon';
+import { IconLinkComponent } from '@jontze/ui/icon-link';
+import { MouseOverDirective } from '@jontze/util/directive';
 
 export interface FooterItem {
   link: string;
@@ -16,6 +19,9 @@ export interface FooterItem {
 @Component({
   selector: 'portfolio-footer',
   templateUrl: './footer.component.html',
+  standalone: true,
+  imports: [IconLinkComponent, MouseOverDirective, NgFor],
+
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [smallSpin],
 })

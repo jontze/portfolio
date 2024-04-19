@@ -1,1 +1,1 @@
-export * from './lib/icon-link.module';
+export * from './lib/icon-link.component';

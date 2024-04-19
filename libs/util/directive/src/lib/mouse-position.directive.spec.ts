@@ -3,10 +3,10 @@ import { MousePositionDirective } from './mouse-position.directive';
 
 describe('MousePositionDirective', () => {
   const generateMockElementRef = (
-    clientWidth: number = 100,
-    clientHeight: number = 100,
-    rectLeft: number = 0,
-    rectTop: number = 0
+    clientWidth = 100,
+    clientHeight = 100,
+    rectLeft = 0,
+    rectTop = 0
   ): ElementRef => {
     return {
       nativeElement: {

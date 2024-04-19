@@ -2,11 +2,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LandingComponent } from './landing.component';
-import { Icon, IconModule } from '@jontze/ui/icon';
-import { FooterModule } from '@jontze/ui/footer';
-import { ProjectsModule } from '@jontze/feature/projects';
+import { Icon } from '@jontze/ui/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { ParticleTextComponent } from '@jontze/ui/particle-text';
+
+@Component({
+  selector: 'portfolio-particle-text',
+  template: '',
+  standalone: true,
+})
+class MockComponent {}
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -14,16 +20,18 @@ describe('LandingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LandingComponent],
       imports: [
         NoopAnimationsModule,
-        IconModule,
-        FooterModule,
-        ProjectsModule,
+        LandingComponent,
         HttpClientTestingModule,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
+    })
+      .overrideComponent(LandingComponent, {
+        remove: { imports: [ParticleTextComponent] },
+        add: { imports: [MockComponent] },
+      })
+      .compileComponents();
 
     fixture = TestBed.createComponent(LandingComponent);
     component = fixture.componentInstance;

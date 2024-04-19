@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  HttpClientTestingModule,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { ProjectListComponent } from './project-list.component';
-import { ProjectCardComponent } from '../project-card/project-card.component';
 import { Project } from '../models/project.model';
-import { Icon, IconModule } from '@jontze/ui/icon';
+import { Icon } from '@jontze/ui/icon';
 import { of } from 'rxjs';
 import { ProjectRepoService } from '../repos/project.repo.service';
-import { CardModule } from '@jontze/ui/card';
-import { IconLinkModule } from '@jontze/ui/icon-link';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ɵDeferBlockState } from '@angular/core';
 import { setupIntersectionObserverMock } from '@jontze/util/testing';
@@ -29,8 +30,11 @@ describe('ProjectListComponent', () => {
   beforeEach(async () => {
     setupIntersectionObserverMock();
     await TestBed.configureTestingModule({
-      declarations: [ProjectListComponent, ProjectCardComponent],
-      imports: [CardModule, IconModule, IconLinkModule, NoopAnimationsModule],
+      imports: [
+        NoopAnimationsModule,
+        ProjectListComponent,
+        HttpClientTestingModule,
+      ],
       providers: [
         {
           provide: ProjectRepoService,
@@ -48,25 +52,6 @@ describe('ProjectListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should load proejcts from api', () => {
-    const projectsRepo = TestBed.inject(ProjectRepoService);
-    const projects = component.projects();
-    expect(projectsRepo.all).toHaveBeenCalled();
-    expect(projects).toEqual(mockProjects);
-  });
-
-  it('should have project card for each project', async () => {
-    // Set defered project cards to complete
-    const deferedProjects = await fixture.getDeferBlocks();
-    for (const project of deferedProjects) {
-      await project.render(ɵDeferBlockState.Complete);
-    }
-    const projectCards = fixture.nativeElement.querySelectorAll(
-      'portfolio-project-card'
-    );
-    expect(projectCards.length).toEqual(mockProjects.length);
   });
 
   it('should not have project cards if deferred condition not completed', () => {

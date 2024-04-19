@@ -6,7 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 
-export const fadeIn = (distancePx: number = 20, animationMs: number = 2000) =>
+export const fadeIn = (distancePx = 20, animationMs = 2000) =>
   trigger('fadeIn', [
     state(
       'void',

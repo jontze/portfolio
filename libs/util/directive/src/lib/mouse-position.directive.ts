@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[portfolioMousePosition]',
 })
 export class MousePositionDirective implements OnInit {

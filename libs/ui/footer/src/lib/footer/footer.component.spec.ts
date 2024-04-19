@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
-import { IconLinkModule } from '@jontze/ui/icon-link';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SmallSpinState } from '@jontze/ui/animations';
 
@@ -10,8 +9,7 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FooterComponent],
-      imports: [IconLinkModule, NoopAnimationsModule],
+      imports: [FooterComponent, NoopAnimationsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);

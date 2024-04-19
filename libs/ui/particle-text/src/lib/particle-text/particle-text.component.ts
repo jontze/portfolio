@@ -12,6 +12,7 @@ import { Effect } from './effect';
 @Component({
   selector: 'portfolio-particle-text',
   templateUrl: './particle-text.component.html',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParticleTextComponent implements AfterViewInit {

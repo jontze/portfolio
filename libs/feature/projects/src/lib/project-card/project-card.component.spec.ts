@@ -2,9 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProjectCardComponent } from './project-card.component';
-import { CardModule } from '@jontze/ui/card';
-import { Icon, IconModule } from '@jontze/ui/icon';
-import { IconLinkModule } from '@jontze/ui/icon-link';
+import { Icon } from '@jontze/ui/icon';
 import { SmallSpinState } from '@jontze/ui/animations';
 
 describe('ProjectCardComponent', () => {
@@ -13,8 +11,7 @@ describe('ProjectCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectCardComponent],
-      imports: [NoopAnimationsModule, CardModule, IconModule, IconLinkModule],
+      imports: [NoopAnimationsModule, ProjectCardComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectCardComponent);
