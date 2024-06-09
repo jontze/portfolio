@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {
-  HttpClientTestingModule,
-  provideHttpClientTesting,
-} from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ProjectListComponent } from './project-list.component';
 import { Project } from '../models/project.model';
 import { Icon } from '@jontze/ui/icon';
 import { of } from 'rxjs';
 import { ProjectRepoService } from '../repos/project.repo.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ɵDeferBlockState } from '@angular/core';
 import { setupIntersectionObserverMock } from '@jontze/util/testing';
+import { provideHttpClient } from '@angular/common/http';
+import {
+  provideProjectsApi,
+  withApiConfig,
+} from '@jontze/data-access/projects-api';
 
 describe('ProjectListComponent', () => {
   let component: ProjectListComponent;
@@ -30,12 +31,17 @@ describe('ProjectListComponent', () => {
   beforeEach(async () => {
     setupIntersectionObserverMock();
     await TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        ProjectListComponent,
-        HttpClientTestingModule,
-      ],
+      imports: [NoopAnimationsModule, ProjectListComponent],
       providers: [
+        provideProjectsApi(
+          withApiConfig({
+            useValue: {
+              url: 'http://localhost:3333/api/projects',
+            },
+          })
+        ),
+        provideHttpClient(),
+        provideHttpClientTesting(),
         {
           provide: ProjectRepoService,
           useValue: {

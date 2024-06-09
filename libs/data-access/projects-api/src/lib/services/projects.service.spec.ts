@@ -1,21 +1,33 @@
 import { TestBed } from '@angular/core/testing';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 
 import { ProjectsService } from './projects.service';
-import { PROJECTS_API_URL } from '../constants/url';
+import { API_CONFIG_TOKEN, ProjectsApiConfig } from '../token';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ProjectsService', () => {
   let service: ProjectsService;
 
   let mockHttpClient: HttpTestingController;
 
+  const apiUrl = 'http://localhost:3333/api/projects';
+
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ProjectsService],
-      imports: [HttpClientTestingModule],
+      providers: [
+        ProjectsService,
+        {
+          provide: API_CONFIG_TOKEN,
+          useValue: {
+            url: apiUrl,
+          } as ProjectsApiConfig,
+        },
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
     });
     service = TestBed.inject(ProjectsService);
     mockHttpClient = TestBed.inject(HttpTestingController);
@@ -41,7 +53,7 @@ describe('ProjectsService', () => {
       done();
     });
 
-    const req = mockHttpClient.expectOne(PROJECTS_API_URL);
+    const req = mockHttpClient.expectOne(apiUrl);
     expect(req.request.method).toEqual('GET');
     req.flush(mockProjects);
   });

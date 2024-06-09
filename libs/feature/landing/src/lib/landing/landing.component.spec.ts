@@ -1,11 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 
 import { LandingComponent } from './landing.component';
 import { Icon } from '@jontze/ui/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { ParticleTextComponent } from '@jontze/ui/particle-text';
+import { provideHttpClient } from '@angular/common/http';
+import {
+  provideProjectsApi,
+  withApiConfig,
+} from '@jontze/data-access/projects-api';
 
 @Component({
   selector: 'portfolio-particle-text',
@@ -20,10 +28,17 @@ describe('LandingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        LandingComponent,
-        HttpClientTestingModule,
+      imports: [NoopAnimationsModule, LandingComponent],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideProjectsApi(
+          withApiConfig({
+            useValue: {
+              url: 'http://localhost:3333/api/projects',
+            },
+          })
+        ),
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
