@@ -7,6 +7,9 @@ on:
         required: true
         description: 'The access token for nx cloud'
 
+env:
+  MAIN_BRANCH_NAME: main
+
 jobs:
   unit:
     name: Unit tests
@@ -14,6 +17,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ env.MAIN_BRANCH_NAME }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -32,6 +40,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ env.MAIN_BRANCH_NAME }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -50,6 +63,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ env.MAIN_BRANCH_NAME }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -68,6 +86,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: ${{ env.MAIN_BRANCH_NAME }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
