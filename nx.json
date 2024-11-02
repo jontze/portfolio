@@ -62,5 +62,6 @@
       "style": "css"
     }
   },
-  "useInferencePlugins": false
+  "useInferencePlugins": false,
+  "useLegacyCache": true
 }
