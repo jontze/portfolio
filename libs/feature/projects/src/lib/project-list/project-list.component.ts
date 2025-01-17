@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
+import { provideProjectsApi } from '@jontze/data-access/projects-api';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { fadeIn } from '@jontze/ui/animations';
+
 import { ProjectRepoService } from '../repos/project.repo.service';
 import { Project } from '../models/project.model';
-import { fadeIn } from '@jontze/ui/animations';
-import { NgFor } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
-import { provideProjectsApi } from '@jontze/data-access/projects-api';
 
 @Component({
   selector: 'portfolio-project-list',
   templateUrl: './project-list.component.html',
-  standalone: true,
-  imports: [NgFor, ProjectCardComponent],
+  imports: [ProjectCardComponent],
   providers: [provideProjectsApi(), ProjectRepoService],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [fadeIn()],

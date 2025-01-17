@@ -17,7 +17,6 @@ import {
 @Component({
   selector: 'portfolio-icon',
   templateUrl: './icon.component.html',
-  standalone: true,
   providers: [
     provideIcons({
       heroChevronDoubleDownSolid,

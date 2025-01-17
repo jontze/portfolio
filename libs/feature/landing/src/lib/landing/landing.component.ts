@@ -8,7 +8,6 @@ import { ProjectListComponent } from '@jontze/feature/projects';
 @Component({
   selector: 'portfolio-landing',
   templateUrl: './landing.component.html',
-  standalone: true,
   imports: [
     FooterComponent,
     ParticleTextComponent,
