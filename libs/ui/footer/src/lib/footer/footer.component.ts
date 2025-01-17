@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -19,9 +18,7 @@ export interface FooterItem {
 @Component({
   selector: 'portfolio-footer',
   templateUrl: './footer.component.html',
-  standalone: true,
-  imports: [IconLinkComponent, MouseOverDirective, NgFor],
-
+  imports: [IconLinkComponent, MouseOverDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [smallSpin],
 })

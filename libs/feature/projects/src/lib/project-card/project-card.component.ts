@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -15,10 +14,8 @@ import { MouseOverDirective } from '@jontze/util/directive';
 @Component({
   selector: 'portfolio-project-card',
   templateUrl: './project-card.component.html',
-  standalone: true,
   imports: [
     IconComponent,
-    NgIf,
     IconLinkComponent,
     MouseOverDirective,
     CardComponent,

@@ -11,7 +11,6 @@ import { MousePositionDirective } from '@jontze/util/directive';
 @Component({
   selector: 'portfolio-card',
   templateUrl: './card.component.html',
-  standalone: true,
   imports: [MousePositionDirective, NgStyle],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
